@@ -38,7 +38,6 @@
 text-transform:capitalize ;   
  font-size: 2em;
     margin-bottom: 10px;
-    letter-spacing: 1.2em;
     text-align: center;
     font-weight: 600;
 }
@@ -86,7 +85,6 @@ text-transform:capitalize ;
 }
 .title h2{
     color: purple;
-    letter-spacing: 1em;
     font-size: 1.5em;
     text-transform: capitalize;
 }
