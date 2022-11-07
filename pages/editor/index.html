@@ -8,10 +8,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Glory&display=swap" rel="stylesheet">
-    <link rel='stylesheet' href='../assets/styles/editor.css'>
+    <link rel='stylesheet' href='../../assets/styles/editor.css'>
 </head>
 <body>
-    Editor Page
+    <div class="container">
+        <h1>Online Live Web Code Editor</h1>
+        <div class="editors-container">
+            <div class="html-editor">
+                <textarea placeholder="HTML HERE" name="" id="html"><div></div></textarea>
+            </div>
+            <div class="css-editor">
+                <textarea placeholder="CSS HERE" name="" id="css"><style></style></textarea>
+            </div>
+            <div class="js-editor">
+                <textarea placeholder="JAVASCRIPT HERE" name="" id="js"><script></script></textarea>
+            </div>
+        </div>
+        <iframe class="display-section" src="" frameborder="0"></iframe>
+    </div>
 </body>
-<script src='../assets/styles/editor.js'></script>
+<script src='../../assets/styles/editor.js'></script>
 </html>
