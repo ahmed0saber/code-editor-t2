@@ -1,16 +1,18 @@
-/* EMPTY */
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    position: relative;
+    border: none;
+    outline: none;
+    font-family: "Glory", sans-serif;
 }
 .landing-page{
     background-color: white;
-   position: absolute;
-   top: 0;
+    position: absolute;
+    top: 0;
     width: 100%;
     height: 100vh;
-
 }
 
 .landing-page .content{
@@ -35,8 +37,8 @@
     width: 400px;
 }
 .landing-page .content .content-items h2{
-text-transform:capitalize ;   
- font-size: 2em;
+    text-transform:capitalize ;   
+    font-size: 2em;
     margin-bottom: 10px;
     text-align: center;
     font-weight: 600;
@@ -68,7 +70,7 @@ text-transform:capitalize ;
 @media(max-width:400px){
     .landing-page .content{
         justify-content: flex-start;
-       max-width:300px;
+        max-width:300px;
     }
 }
 .title{
@@ -88,5 +90,3 @@ text-transform:capitalize ;
     font-size: 1.5em;
     text-transform: capitalize;
 }
-
-
