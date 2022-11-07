@@ -7,6 +7,23 @@
     outline: none;
     font-family: "Glory", sans-serif;
 }
+
+nav {
+    padding: 16px;
+    border-bottom: 1px solid gray;
+    background-color: #f7f7f7;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+nav h1 {
+    color: #323232;
+}
+nav a {
+    text-decoration: none;
+}
+
 .landing-page{
     background-color: white;
     width: 100%;
