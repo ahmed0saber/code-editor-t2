@@ -59,6 +59,39 @@ nav a {
     width: 100%;
 }
 
-@media (max-width: 900px) {
-    
+
+/* buuton  */
+.buttons{
+    padding: 20px;
+    margin: auto;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+button{
+    padding: 4px 70px;
+    background-color: #fff;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 6px;
+    vertical-align: middle;
+}
+button:focus{
+    border: 2px solid black;
+}
+
+.res{
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+@media (min-width: 900px) {
+    .buttons{
+        display: none;
+    }
 }

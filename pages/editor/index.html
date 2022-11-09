@@ -16,20 +16,28 @@
             <h1>Online Live Web Code Editor</h1>
         </a>
     </nav>
+
+    <div class="buttons">
+        <button class="visp" onclick="show()" data-cat=".html-editor">HTML</button>
+        <button class="visp" onclick="show()" data-cat=".css-editor">CSS</button>
+        <button class="visp" onclick="show()" data-cat=".js-editor">JS</button>
+        <button class="res" onclick="high()">Result</button>
+    </div>
+
     <div class="container">
         <div class="editors-container">
-            <div class="html-editor">
+            <div class="html-editor here">
                 <textarea placeholder="HTML HERE" name="" id="html"><div></div></textarea>
             </div>
-            <div class="css-editor">
+            <div class="css-editor here">
                 <textarea placeholder="CSS HERE" name="" id="css"><style></style></textarea>
             </div>
-            <div class="js-editor">
+            <div class="js-editor here">
                 <textarea placeholder="JAVASCRIPT HERE" name="" id="js"><script></script></textarea>
             </div>
         </div>
-        <iframe class="display-section" src="" frameborder="0"></iframe>
+        <iframe class="display-section frame" src="" frameborder="0"></iframe>
     </div>
 </body>
-<script src='../../assets/styles/editor.js'></script>
+<script src='/assets/scripts/editor.js'></script>
 </html>
