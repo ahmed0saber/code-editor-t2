@@ -1,30 +1,33 @@
 // Variables
-const userInput = document.querySelector("input");
-const userDesc = document.querySelector("textarea");
+const projectNameInput = document.querySelector("input");
+const projectDescInput = document.querySelector("textarea");
 const button = document.querySelector(".btn");
-let username;
-let description;
-let userProject = [];
-let newProject = {};
+let projectName, description, userProjects = getProjectsFromLocalStorage(), newProject = {};
+
 // user events
 button.addEventListener("click", () => {
   // create new project when click
+  let projectId
+  if(userProjects.length < 1){
+    projectId = 0
+  }else{
+    projectId = userProjects[userProjects.length - 1].id + 1
+  }
   newProject = {
-    // generating random id
-    id: Math.floor(Math.random() * 10000),
-    name: userInput.value,
-    description: userDesc.value,
+    id: projectId,
+    name: projectNameInput.value,
+    description: projectDescInput.value,
     htmlCode: "<div></div>",
     cssCode: "<style></style>",
     jsCode: "<script></script>",
   };
   // get user input
-  userInput.addEventListener("input", () => {
-    username = userInput.value;
+  projectNameInput.addEventListener("input", () => {
+    projectName = projectNameInput.value;
   });
   // get user description
-  userDesc.addEventListener("input", () => {
-    description = userDesc.value;
+  projectDescInput.addEventListener("input", () => {
+    description = projectDescInput.value;
   });
   // call function when user click create
   createProject();
@@ -32,13 +35,17 @@ button.addEventListener("click", () => {
 
 // functions here
 function createProject() {
-  userProject.push(newProject);
+  userProjects.push(newProject);
   // save to localStorage and convert array to JSON string
-  window.localStorage.setItem(
-    `Project-${userProject.length + 1}`,
-    JSON.stringify(userProject)
-  );
-  // clear username input and textarea description after create project
-  userInput.value = "";
-  userDesc.value = "";
+  localStorage.setItem("projects", JSON.stringify(userProjects));
+  // clear projectName input and textarea description after create project
+  projectNameInput.value = "";
+  projectDescInput.value = "";
+}
+
+function getProjectsFromLocalStorage(){
+  if(localStorage.getItem("projects")){
+    return JSON.parse(localStorage.getItem("projects"))
+  }
+  return []
 }
