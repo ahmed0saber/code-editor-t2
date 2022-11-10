@@ -37,16 +37,27 @@ function show() {
   frame.style.display = "none";
   content.style.display = "block";
 }
- /*كود ترميز النصوص */
-document.getElementById('html').value="<div>\n\n</div>";
-document.getElementById('css').value="<style>\n\n</style>";
-document.getElementById('js').value="<script>\n\n</script>";
+
+/*كود ترميز النصوص */
+const htmlTextarea = document.getElementById('html');
+const cssTextarea = document.getElementById('css');
+const jsTextarea = document.getElementById('js');
+const outputIframe = document.getElementById('iframe');
+
 function showcode(){
-  var htmlcode=document.getElementById('html').value;
-  var csscode=document.getElementById('css').value + "";
-  var jscode=document.getElementById('js').value + "";
-  var output=document.getElementById('iframe').contentWindow.document;
+  const htmlcode = htmlTextarea.value;
+  const csscode = cssTextarea.value;
+  const jscode = jsTextarea.value;
+  const output = outputIframe.contentWindow.document;
   output.open();
   output.write(htmlcode+csscode+jscode);
   output.close();
 }
+
+function initializeCodeEditor(){
+  htmlTextarea.value="<div>\n\n</div>";
+  cssTextarea.value="<style>\n\n</style>";
+  jsTextarea.value="<script>\n\n</script>";
+  showcode()
+}
+initializeCodeEditor()
