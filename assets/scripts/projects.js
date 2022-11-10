@@ -49,3 +49,12 @@ function getProjectsFromLocalStorage(){
   }
   return []
 }
+
+function showAllProjects(){
+  console.log("I'm here")
+
+  // get array of projects from localStorage
+
+  // loop the array and build a card for each object in it
+}
+showAllProjects()
