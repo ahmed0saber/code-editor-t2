@@ -61,3 +61,13 @@ function initializeCodeEditor(){
   showcode()
 }
 initializeCodeEditor()
+
+function saveProject(){
+  // get array of projects from localStorage
+
+  // loop the array until you find the project id
+
+  // modify the project
+
+  // store array of projects in localStorage
+}

@@ -70,7 +70,7 @@ nav a {
     padding: 12px 12px 0 12px;
 }
 
-button{
+.buttons button{
     background-color: #fff;
     font-size: 18px;
     text-align: center;
@@ -81,13 +81,37 @@ button{
     flex: 1;
     border: 2px solid #ccc;
 }
-button:focus{
+.buttons button:focus{
     border: 2px solid black;
 }
 
-.res{
+.buttons .res{
     background-color: #0d6efd;
     color: #fff;
+}
+
+.editor-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 12px 0 12px;
+}
+
+.editor-header button{
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 24px;
+    font-size: 16px;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
 }
 
 @media (min-width: 769px){
