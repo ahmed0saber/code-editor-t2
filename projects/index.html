@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>My Projects | Edit My Code</title>
+    <meta name="description" content="A website where you can practice coding in html, css and js, and save your projects"/>
+    <meta name="keywords" content="html, css, js, javascript, coding, editor, project, web, frontend">
+    <meta name="og:title" content="My Projects | Edit My Code">
+    <meta name="og:description" content="A website where you can practice coding in html, css and js, and save your projects">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Glory&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='../assets/styles/projects.css'>
+  </head>
+  <body>
+    <nav>
+      <a href="../">
+          <h1>Edit My Code</h1>
+      </a>
+    </nav>
+    <div class="head">
+      <h1>Here All Files Saved</h1>
+    </div>
+    <div class="container row projects-container">
+      <div class="box-add">
+        <h2>Add New Project</h2>
+        <input
+          type="text"
+          required
+          maxlength="10"
+          minlength="5"
+          placeholder="project name"
+        />
+        <textarea placeholder="description..." name="desck" id="desck" cols="30" rows="10"></textarea
+        >
+        <button class="btn">Create</button>
+      </div>
+    </div>
+  </body>
+  <script src="../assets/scripts/projects.js"></script>
+</html>
