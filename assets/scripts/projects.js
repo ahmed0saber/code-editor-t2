@@ -34,6 +34,7 @@ function handleCreateBtn(){
 
 // functions here
 function createProject() {
+  userProjects = getProjectsFromLocalStorage()
   const projectNameInput = document.querySelector("input");
   const projectDescInput = document.querySelector("textarea");
   if(projectNameInput.value.trim().length < 1 || projectDescInput.value.trim().length < 1){
@@ -64,15 +65,8 @@ function showAllProjects(){
   const projectsContainer = document.querySelector(".projects-container")
   projectsContainer.innerHTML = `<div class="box-add">
     <h2>Add New Project</h2>
-    <input
-      type="text"
-      required
-      maxlength="10"
-      minlength="5"
-      placeholder="project name"
-    />
-    <textarea placeholder="description..." name="desck" id="desck" cols="30" rows="10"></textarea
-    >
+    <input type="text" placeholder="project name"/>
+    <textarea placeholder="description..." name="desck" id="desck"></textarea>
     <button onclick="handleCreateBtn()" class="btn">Create</button>
   </div>`
 
