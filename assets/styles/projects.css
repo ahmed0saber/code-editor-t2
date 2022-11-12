@@ -163,6 +163,23 @@ textarea{
     background-color: var(--hover-color);
 }
 
+.box-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.box-header span{
+    padding: 6px;
+    cursor: pointer;
+}
+
+.box-header svg{
+    width: 20px;
+}
+
 @media (max-width: 940px){
     .box,
     .box-add {
