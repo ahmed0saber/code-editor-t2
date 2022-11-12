@@ -36,6 +36,10 @@ function handleCreateBtn(){
 function createProject() {
   const projectNameInput = document.querySelector("input");
   const projectDescInput = document.querySelector("textarea");
+  if(projectNameInput.value.trim().length < 1 || projectDescInput.value.trim().length < 1){
+    alert("All fields are required")
+    return
+  }
   userProjects.push(newProject);
   // save to localStorage and convert array to JSON string
   localStorage.setItem("projects", JSON.stringify(userProjects));
