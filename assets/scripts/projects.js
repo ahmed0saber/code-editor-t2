@@ -1,10 +1,10 @@
 // Variables
-const projectNameInput = document.querySelector("input");
-const projectDescInput = document.querySelector("textarea");
-const button = document.querySelector(".btn");
 let projectName, description, userProjects = getProjectsFromLocalStorage(), newProject = {};
 // user events
-button.addEventListener("click", () => {
+
+function handleCreateBtn(){
+  const projectNameInput = document.querySelector("input");
+  const projectDescInput = document.querySelector("textarea");
   // create new project when clicked
   let projectId
   if(userProjects.length < 1){
@@ -30,16 +30,19 @@ button.addEventListener("click", () => {
   });
   // call function when user click create
   createProject();
-});
+}
 
 // functions here
 function createProject() {
+  const projectNameInput = document.querySelector("input");
+  const projectDescInput = document.querySelector("textarea");
   userProjects.push(newProject);
   // save to localStorage and convert array to JSON string
   localStorage.setItem("projects", JSON.stringify(userProjects));
   // clear projectName input and textarea description after create project
   projectNameInput.value = "";
   projectDescInput.value = "";
+  showAllProjects()
 }
 
 function getProjectsFromLocalStorage(){
@@ -50,10 +53,33 @@ function getProjectsFromLocalStorage(){
 }
 
 function showAllProjects(){
-  console.log("I'm here")
-
   // get array of projects from localStorage
+  userProjects = getProjectsFromLocalStorage()
 
   // loop the array and build a card for each object in it
+  const projectsContainer = document.querySelector(".projects-container")
+  projectsContainer.innerHTML = `<div class="box-add">
+    <h2>Add New Project</h2>
+    <input
+      type="text"
+      required
+      maxlength="10"
+      minlength="5"
+      placeholder="project name"
+    />
+    <textarea placeholder="description..." name="desck" id="desck" cols="30" rows="10"></textarea
+    >
+    <button onclick="handleCreateBtn()" class="btn">Create</button>
+  </div>`
+
+  for(let i = 0; i < userProjects.length; i++){
+    projectsContainer.innerHTML += `<div class="box">
+      <div>
+        <h2>${userProjects[i].name}</h2>
+        <p>${userProjects[i].description}</p>
+      </div>
+      <a href="../editor/?id=${userProjects[i].id}" class="button">View Project</a>
+    </div>`
+  }
 }
 showAllProjects()
