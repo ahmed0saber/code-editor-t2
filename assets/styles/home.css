@@ -63,7 +63,7 @@ nav a {
     font-size: 1.1em; 
     margin-bottom: 10px;
 }
-.landing-page .content .content-items a{
+.landing-page .content .content-items a.btn{
     display: block;
     border-radius: 10px;
     background-color: #0a0a23;
@@ -73,6 +73,10 @@ nav a {
     font-size: 1.2em;
     padding: 10px 20px;
 }
-.landing-page .content .content-items a:hover{
+.landing-page .content .content-items a.btn:hover{
     background-color: #002ead;
+}
+
+.developed-by{
+    margin: 12px 0 0 0;
 }
