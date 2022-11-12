@@ -60,30 +60,40 @@ function initializeCodeEditor(){
   jsTextarea.value="<script>\n\n</script>";
   showcode()
 }
-initializeCodeEditor()
 
+document.querySelector(".save-project-btn").addEventListener("click", saveProject)
 function saveProject(){
   // get array of projects from localStorage
+  const allProjects = getProjectsFromLocalStorage()
 
   // loop the array until you find the project id
-
-  // modify the project
+  const projectId = getCurrentProjectId()
+  for(let i = 0; i < allProjects.length; i++){
+    if(allProjects[i].id == projectId){
+      allProjects[i].htmlCode = htmlTextarea.value
+      allProjects[i].cssCode = cssTextarea.value
+      allProjects[i].jsCode = jsTextarea.value
+      break
+    }
+  }
 
   // store array of projects in localStorage
+  localStorage.setItem("projects", JSON.stringify(allProjects))
 }
 
 function getCurrentProjectData(){
   const projectId = getCurrentProjectId()
   const allProjects = getProjectsFromLocalStorage()
   for(let i = 0; i < allProjects.length; i++){
-    if(allProjects[i].id === projectId){
+    if(allProjects[i].id == projectId){
       htmlTextarea.value = allProjects[i].htmlCode
       cssTextarea.value = allProjects[i].cssCode
       jsTextarea.value = allProjects[i].jsCode
       showcode()
-      break
+      return
     }
   }
+  initializeCodeEditor()
 }
 getCurrentProjectData()
 
