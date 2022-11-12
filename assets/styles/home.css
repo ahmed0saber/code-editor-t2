@@ -16,6 +16,7 @@ nav {
     top: 0;
     left: 0;
     z-index: 999;
+    height: 60px;
 }
 nav h1 {
     color: #323232;
@@ -27,7 +28,7 @@ nav a {
 .landing-page{
     background-color: white;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 60px);
     display: grid;
     place-items: center;
 }
