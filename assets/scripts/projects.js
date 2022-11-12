@@ -2,11 +2,10 @@
 const projectNameInput = document.querySelector("input");
 const projectDescInput = document.querySelector("textarea");
 const button = document.querySelector(".btn");
-let projectName, description, userProjects = getProjectsFromLocalStorage(), newProject = {;
-}
+let projectName, description, userProjects = getProjectsFromLocalStorage(), newProject = {};
 // user events
 button.addEventListener("click", () => {
-  // create new project ick
+  // create new project when clicked
   let projectId
   if(userProjects.length < 1){
     projectId = 0
@@ -22,8 +21,8 @@ button.addEventListener("click", () => {
     jsCode: "<script></script>",
   };
   // get user input
-  .addEventListener("input", () => {
-    projectName = projectNameInputprojectNameInput.value;
+  projectNameInput.addEventListener("input", () => {
+    projectName = projectNameInput.value;
   });
   // get user description
   projectDescInput.addEventListener("input", () => {
