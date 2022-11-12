@@ -86,6 +86,7 @@ function getCurrentProjectData(){
   const allProjects = getProjectsFromLocalStorage()
   for(let i = 0; i < allProjects.length; i++){
     if(allProjects[i].id == projectId){
+      document.querySelector(".project-name").textContent = allProjects[i].name
       htmlTextarea.value = allProjects[i].htmlCode
       cssTextarea.value = allProjects[i].cssCode
       jsTextarea.value = allProjects[i].jsCode
