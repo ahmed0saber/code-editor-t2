@@ -71,3 +71,32 @@ function saveProject(){
 
   // store array of projects in localStorage
 }
+
+function getCurrentProjectData(){
+  const projectId = getCurrentProjectId()
+  const allProjects = getProjectsFromLocalStorage()
+  for(let i = 0; i < allProjects.length; i++){
+    if(allProjects[i].id === projectId){
+      htmlTextarea.value = allProjects[i].htmlCode
+      cssTextarea.value = allProjects[i].cssCode
+      jsTextarea.value = allProjects[i].jsCode
+      showcode()
+      break
+    }
+  }
+}
+getCurrentProjectData()
+
+function getCurrentProjectId(){
+  const queryString = window.location.search
+  const urlParams = new URLSearchParams(queryString)
+  const projectId = urlParams.get('id')
+  return projectId
+}
+
+function getProjectsFromLocalStorage(){
+  if(localStorage.getItem("projects")){
+    return JSON.parse(localStorage.getItem("projects"))
+  }
+  return []
+}
